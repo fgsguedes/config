@@ -30,12 +30,12 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(vcprompt_changes)\n\[\$(success_color)\]$\[\033[m\] "
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home
 
-alias sublime="open -a 'Sublime Text 2'"
 alias ls='ls -GFlah'
-export PATH=/usr/local/bin:$PATH
+
+alias postgres-server='postgres -D /usr/local/var/postgres'
+alias redis='redis-server /usr/local/etc/redis.conf'
+
+export PATH=$PATH:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools

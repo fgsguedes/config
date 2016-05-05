@@ -1,1 +1,4 @@
-(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-directory-alist
+      `((".*" . "/tmp")))
+(setq auto-save-file-name-transforms
+      `((".*" "/tmp" t)))

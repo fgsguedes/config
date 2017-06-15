@@ -35,7 +35,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=~/Library/Android/sdk
 
 alias ls='ls -GFlah'
-
 alias dunnet='emacs -batch -l dunnet'
 
-export PATH=$PATH:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
+export PATH=/usr/local/bin:$PATH:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools/bin

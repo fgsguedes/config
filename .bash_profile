@@ -37,4 +37,6 @@ export ANDROID_HOME=~/Library/Android/sdk
 alias ls='ls -GFlah'
 alias dunnet='emacs -batch -l dunnet'
 
+alias androidCurrentWindow="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
+
 export PATH=/usr/local/bin:$PATH:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools/bin

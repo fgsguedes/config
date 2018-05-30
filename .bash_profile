@@ -33,6 +33,7 @@ fi
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(vcprompt_changes)\n\[\$(success_color)\]$\[\033[m\] "
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 alias ls='ls -GFlah'
 alias dunnet='emacs -batch -l dunnet'

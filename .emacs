@@ -4,7 +4,6 @@
 (package-initialize)
 
 (menu-bar-mode 0)
-(tool-bar-mode 0)
 (ido-mode 1)
 
 (setq inhibit-startup-screen t)

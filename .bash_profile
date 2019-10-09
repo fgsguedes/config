@@ -35,10 +35,10 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 
-alias ls='ls -GFlah'
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/tools
+
 alias dunnet='emacs -batch -l dunnet'
-
-alias androidCurrentWindow="adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'"
-
-export PATH=/usr/local/bin:$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools
-
+alias ls='ls -GFlah'

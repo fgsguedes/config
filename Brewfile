@@ -12,6 +12,7 @@ brew "git"
 brew "gradle"
 brew "gradle-completion"
 brew "kotlin"
+brew "mas"
 brew "node"
 brew "openssl"
 brew "pidcat"
@@ -21,3 +22,7 @@ brew "unzip"
 brew "vcprompt"
 brew "wget"
 brew "youtube-dl"
+mas "Magnet", id: 441258766
+mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
+mas "WhatsApp", id: 1147396723

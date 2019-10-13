@@ -4,7 +4,6 @@
 
 (package-initialize)
 
-
 (menu-bar-mode 0)
 
 ;; Line number in file
@@ -23,8 +22,7 @@
       `(("." . "/tmp")))
 
 (defvar package-list)
-(setq package-list '(smartparens org magit smex))
-
+(setq package-list '(magit smex))
 
 (require 'ido)
 (ido-mode 1)

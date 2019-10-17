@@ -7,14 +7,14 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' unstagedstr '*'
-zstyle ':vcs_info:*' actionformats ' %F{5}[%F{2}%b%c%u%F{3} (%F{1}%a)%F{5}]%f '
-zstyle ':vcs_info:*' formats ' %F{5}[%F{2}%b%c%u%F{5}]%f '
+zstyle ':vcs_info:*' actionformats ' %F{5}[%F{2}%b%F{4}%c%F{3}%u %F{1}%a%F{5}]%f'
+zstyle ':vcs_info:*' formats ' %F{5}[%F{2}%b%F{4}%c%F{3}%u%F{5}]%f '
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep '??' &> /dev/null ; then
-        hook_com[unstaged]+='?'
+        hook_com[unstaged]+='%F{1}?'
     fi
 }
 

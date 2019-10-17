@@ -15,3 +15,5 @@
 	prune = true
 [push]
 	default = current
+[merge]
+	conflictStyle = diff3

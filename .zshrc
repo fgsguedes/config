@@ -45,3 +45,6 @@ export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/tools
+
+alias branch='git branch'
+alias switch='git switch'

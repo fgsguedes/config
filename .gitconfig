@@ -16,4 +16,5 @@
 [push]
 	default = current
 [merge]
+	ff = no
 	conflictStyle = diff3

@@ -8,7 +8,7 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' actionformats ' %F{5}[%F{2}%b%F{4}%c%F{3}%u %F{1}%a%F{5}]%f'
-zstyle ':vcs_info:*' formats ' %F{5}[%F{2}%b%F{4}%c%F{3}%u%F{5}]%f '
+zstyle ':vcs_info:*' formats       ' %F{5}[%F{2}%b%F{4}%c%F{3}%u%F{5}]%f '
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 +vi-git-untracked(){
@@ -34,7 +34,7 @@ setopt HIST_EXPIRE_DUPS_FIRST
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
-export PROMPT=$'%B%F{yellow}%~%f%b${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
+export PROMPT=$'%F{yellow}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=~/Library/Android/sdk

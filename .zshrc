@@ -34,6 +34,8 @@ setopt HIST_EXPIRE_DUPS_FIRST
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
+export WORDCHARS=''
+
 export PROMPT=$'%F{blue}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
 
 export JAVA_HOME=$(/usr/libexec/java_home)

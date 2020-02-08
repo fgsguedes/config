@@ -4,6 +4,8 @@
 <dict>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -282,6 +284,8 @@
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>125 25 1429 978 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_1A2874BC-5635-49A4-A923-127B4D4AA298</key>
@@ -932,6 +936,7 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.7</string>
+		<string>3.3.8</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -948,9 +953,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>7347B2B9-DD3B-4B95-8165-2D6701AA0B34</string>
 	<key>NoSyncLastTipTime</key>
-	<real>601341895.13540006</real>
+	<real>602852627.84597695</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
+	<integer>16</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1655,8 +1660,11 @@
 	<real>600907633.836712</real>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
+		<string>0001</string>
 		<string>000</string>
+		<string>0002</string>
 		<string>0000</string>
+		<string>0003</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -1704,8 +1712,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-21T23:18:21Z</date>
+	<date>2020-02-08T11:03:46Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
@@ -1714,6 +1724,6 @@
 	<key>VisualIndicatorForEsc</key>
 	<true/>
 	<key>iTerm Version</key>
-	<string>3.3.7</string>
+	<string>3.3.8</string>
 </dict>
 </plist>

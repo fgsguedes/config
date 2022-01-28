@@ -6,27 +6,22 @@
 
 (menu-bar-mode 0)
 
-;; Line number in file
-;; (global-linum-mode t)
-
 ;; Change line number description from L{line} to ({line},{column})
 (column-number-mode 1)
 
 ;; Highlight matching parenthesis
 (show-paren-mode 1)
 
-
 (setq inhibit-startup-screen t)
-
-(setq backup-directory-alist
-      `(("." . "/tmp")))
+(transient-mark-mode 1)
 
 (defvar package-list)
 (setq package-list '(magit smex))
 
+(require 'org)
+
 (require 'ido)
 (ido-mode 1)
-
 
 (require 'smex)
 (smex-initialize)
@@ -39,7 +34,8 @@
 
 (custom-set-variables
  '(ido-enable-flex-matching t)
- '(package-selected-packages (quote (darcula-theme magit smex))))
+ '(package-selected-packages (quote (darcula-theme magit smex org)))
+)
 
 (custom-set-faces )
 

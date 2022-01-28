@@ -5,14 +5,14 @@
 	l = log --date-order --date=iso --graph --full-history --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ar%Creset %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'
 	f = fetch --all
 	st = status
-[push]
-	default = simple
 [core]
 	editor = emacs
 	autocrlf = input
 	name = Guedes
 [fetch]
 	prune = true
+[pull]
+	ff = only
 [push]
 	default = current
 [merge]

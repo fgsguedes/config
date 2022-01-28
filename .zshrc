@@ -44,9 +44,6 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
+export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/tools
-
-alias branch='git branch'
-alias switch='git switch'
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin

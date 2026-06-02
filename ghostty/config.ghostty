@@ -1,6 +1,10 @@
 # Appearance
 adjust-cell-height = 20%
+adjust-cursor-thickness = 1
+cursor-color = #FFFFFF
+cursor-style = underline
 font-family = "JetBrains Mono Regular"
 font-size = 13
+shell-integration-features = no-cursor
 theme = One Double Dark
 

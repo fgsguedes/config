@@ -3,20 +3,18 @@
 # default programs
 export EDITOR="emacs"
 
-
 # XDG base directories
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-
 # zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # termcap vars
 export GROFF_NO_SGR=1
-export LESS_TERMCAP_mb=$'\e[5;34m' # start blink
+export LESS_TERMCAP_mb=$'\e[5;31m' # start blink
 export LESS_TERMCAP_md=$'\e[1;34m' # start bold
 export LESS_TERMCAP_me=$'\e[0m' # turn off bold, blink, and underline
 export LESS_TERMCAP_so=$'\e[7;36m' # start reverse

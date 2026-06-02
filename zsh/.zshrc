@@ -1,7 +1,14 @@
-alias ls='ls -FGlah'
+alias ls='ls -lah --color=auto'
+alias top=btop
 
+zmodload zsh/complist
 autoload -Uz compinit && compinit
+autoload -Uz colors && colors
 autoload -Uz vcs_info
+
+[ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
@@ -20,16 +27,14 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 precmd () { vcs_info }
 
+[ -d "$XDG_STATE_HOME"/zsh ] || mkdir -p "$XDG_STATE_HOME"/zsh
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export SAVEHIST=1000
+
 setopt AUTO_CD
-
 setopt PROMPT_SUBST
-
-setopt SHARE_HISTORY
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt HIST_EXPIRE_DUPS_FIRST 
+setopt AUTO_MENU AUTO_PARAM_SLASH
+setopt HIST_IGNORE_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS HIST_EXPIRE_DUPS_FIRST
 
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
@@ -37,13 +42,3 @@ export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export WORDCHARS=''
 
 export PROMPT=$'%F{blue}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export ANDROID_HOME=~/Library/Android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin

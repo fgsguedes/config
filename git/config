@@ -2,14 +2,19 @@
 	l = log --date-order --graph --full-history --pretty=format:'%C(red)%h %C(cyan)%ch %C(bold blue)%aN%C(bold yellow)%d %C(reset)%s'
 	f = fetch --all
 	st = status
+
 [core]
 	editor = emacs
 	autocrlf = input
+
 [fetch]
 	prune = true
+
 [pull]
 	ff = only
+
 [push]
 	default = current
+
 [merge]
 	conflictStyle = diff3

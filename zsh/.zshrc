@@ -44,3 +44,5 @@ export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export WORDCHARS=''
 
 export PROMPT=$'%F{blue}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
+
+[ -f $XDG_CONFIG_HOME/zsh/.zshrc.local ] && source $XDG_CONFIG_HOME/zsh/.zshrc.local

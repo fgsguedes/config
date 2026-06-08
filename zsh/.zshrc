@@ -3,7 +3,6 @@ alias gw='./gradlew'
 alias ls='ls -lah --color=auto'
 alias top=btop
 
-zmodload zsh/complist
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 autoload -Uz vcs_info
@@ -36,13 +35,8 @@ export SAVEHIST=1000
 setopt AUTO_CD
 setopt PROMPT_SUBST
 setopt AUTO_MENU AUTO_PARAM_SLASH
-setopt HIST_IGNORE_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS HIST_EXPIRE_DUPS_FIRST
-
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+setopt HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
 
 export WORDCHARS=''
 
 export PROMPT=$'%F{blue}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
-
-[ -f $XDG_CONFIG_HOME/zsh/.zshrc.local ] && source $XDG_CONFIG_HOME/zsh/.zshrc.local

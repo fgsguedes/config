@@ -1,0 +1,198 @@
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+// https://niri-wm.github.io/niri/Configuration:-Input
+input {
+    keyboard {
+        xkb {
+            // You can set rules, model, layout, variant and options.
+            // For more information, see xkeyboard-config(7).
+
+            // For example:
+            // layout "us,ru"
+            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+
+            // If this section is empty, niri will fetch xkb settings
+            // from org.freedesktop.locale1. You can control these using
+            // localectl set-x11-keymap.
+        }
+    }
+
+    mouse {
+        natural-scroll
+        // accel-speed 1
+        // accel-profile "flat"
+        // scroll-method "no-scroll"
+    }
+
+    trackpoint {
+        off
+    }
+
+    touchpad {
+        off
+    }
+
+    // Wont focus a window if it will result in the scrolling more than the set amount
+    focus-follows-mouse max-scroll-amount="90%"
+    workspace-auto-back-and-forth
+}
+
+// https://niri-wm.github.io/niri/Configuration:-Outputs
+output "DP-1" {
+    mode "2560x1440"
+    transform "180"
+    position x=0 y=-1440
+
+    hot-corners {
+	off
+    }
+}
+
+output "DP-2" {
+    mode "2560x1440"
+    variable-refresh-rate
+    focus-at-startup
+    position x=0 y=0
+
+    hot-corners {
+	off
+    }
+}
+
+// https://niri-wm.github.io/niri/Configuration:-Layout
+layout {
+    gaps 8
+
+    center-focused-column "never"
+    always-center-single-column
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+	proportion 0.66667
+        proportion 0.75
+    }
+
+    preset-window-heights {
+        proportion 0.5
+	proportion 1.0
+    }
+
+    default-column-width {
+        proportion 0.66667
+    }
+
+    focus-ring {
+        on
+        width 2
+        active-color "#7fc8ff"
+        inactive-color "#505050" // Color of the ring on inactive monitors.
+    }
+
+    border {
+        off
+    }
+
+    shadow {
+    	off
+    }
+
+    struts {
+    }
+}
+
+prefer-no-csd
+
+// Add lines like this to spawn processes at startup.
+// Note that running niri as a session supports xdg-desktop-autostart,
+// which may be more convenient to use.
+// See the binds section below for more spawn examples.
+
+// This line starts waybar, a commonly used bar for Wayland compositors.
+// spawn-at-startup "waybar"
+
+// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
+// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// Uncomment this line to ask the clients to omit their client-side decorations if possible.
+// If the client will specifically ask for CSD, the request will be honored.
+// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
+// This option will also fix border/focus ring drawing behind some semitransparent windows.
+// After enabling or disabling this, you need to restart the apps for this to take effect.
+// prefer-no-csd
+
+// You can change the path where screenshots are saved.
+// A ~ at the front will be expanded to the home directory.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/pictures/screenshots/screenshot-%Y-%m-%d %H-%M-%S.png"
+
+// You can also set this to null to disable saving screenshots to disk.
+// screenshot-path null
+
+// Animation settings.
+// The wiki explains how to configure individual animations:
+// https://niri-wm.github.io/niri/Configuration:-Animations
+animations {
+    // Uncomment to turn off all animations.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+}
+
+// https://niri-wm.github.io/niri/Configuration:-Window-Rules
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^org\.gnome\.Calculator$"#
+    match app-id=r#"^gnome-calculator$"#
+    match app-id=r#"^galculator$"#
+    match app-id=r#"^blueman-manager$"#
+    match app-id=r#"^org\.gnome\.Nautilus$"#
+    match app-id=r#"^xdg-desktop-portal$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^steam$"# title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="zoom"
+    open-floating true
+}
+
+// Open dms windows as floating by default
+window-rule {
+    match app-id=r#"org.quickshell$"#
+    match app-id=r#"com.danklinux.dms$"#
+    open-floating true
+}
+
+include "dms/binds.kdl"
+
+

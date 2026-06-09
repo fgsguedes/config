@@ -16,11 +16,9 @@ input {
         }
     }
 
-    mouse {
+    trackball {
         natural-scroll
-        // accel-speed 1
-        // accel-profile "flat"
-        // scroll-method "no-scroll"
+        accel-speed 1
     }
 
     trackpoint {
@@ -33,7 +31,6 @@ input {
 
     // Wont focus a window if it will result in the scrolling more than the set amount
     focus-follows-mouse max-scroll-amount="90%"
-    workspace-auto-back-and-forth
 }
 
 // https://niri-wm.github.io/niri/Configuration:-Outputs

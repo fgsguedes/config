@@ -31,6 +31,7 @@ precmd () { vcs_info }
 [ -d "$XDG_STATE_HOME"/zsh ] || mkdir -p "$XDG_STATE_HOME"/zsh
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export SAVEHIST=1000
+export HISTSIZE=1000
 
 setopt AUTO_CD
 setopt PROMPT_SUBST

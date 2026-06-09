@@ -84,8 +84,8 @@ layout {
     focus-ring {
         on
         width 2
-        active-color "#7fc8ff"
-        inactive-color "#505050" // Color of the ring on inactive monitors.
+        active-color "#4e70c2"
+        urgent-color "#e55561"
     }
 
     border {
@@ -95,23 +95,9 @@ layout {
     shadow {
     	off
     }
-
-    struts {
-    }
 }
 
-prefer-no-csd
-
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
-
-// This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
-
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -121,31 +107,9 @@ hotkey-overlay {
     skip-at-startup
 }
 
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
-// If the client will specifically ask for CSD, the request will be honored.
-// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
-// This option will also fix border/focus ring drawing behind some semitransparent windows.
-// After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
-// You can change the path where screenshots are saved.
-// A ~ at the front will be expanded to the home directory.
-// The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/pictures/screenshots/screenshot-%Y-%m-%d %H-%M-%S.png"
-
-// You can also set this to null to disable saving screenshots to disk.
-// screenshot-path null
-
-// Animation settings.
-// The wiki explains how to configure individual animations:
-// https://niri-wm.github.io/niri/Configuration:-Animations
-animations {
-    // Uncomment to turn off all animations.
-    // off
-
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
-}
 
 // https://niri-wm.github.io/niri/Configuration:-Window-Rules
 window-rule {
@@ -155,42 +119,14 @@ window-rule {
     draw-border-with-background false
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
-window-rule {
-    match app-id=r#"^org\.gnome\.Calculator$"#
-    match app-id=r#"^gnome-calculator$"#
-    match app-id=r#"^galculator$"#
-    match app-id=r#"^blueman-manager$"#
-    match app-id=r#"^org\.gnome\.Nautilus$"#
-    match app-id=r#"^xdg-desktop-portal$"#
-    open-floating true
-}
-
 window-rule {
     match app-id=r#"^steam$"# title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
     open-focused false
 }
 
-window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id="zoom"
-    open-floating true
-}
-
-// Open dms windows as floating by default
-window-rule {
-    match app-id=r#"org.quickshell$"#
-    match app-id=r#"com.danklinux.dms$"#
-    open-floating true
+debug {
+    honor-xdg-activation-with-invalid-serial
 }
 
 include "binds.kdl"

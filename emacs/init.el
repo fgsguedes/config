@@ -40,7 +40,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ido-enable-flex-matching t)
- '(package-selected-packages '(darcula-theme smex)))
+ '(package-selected-packages nil)
+ '(package-vc-selected-packages
+   '((tokyonight-themes :url
+			"https://github.com/xuchengpeng/tokyonight-themes"))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -49,5 +52,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'darcula t)
-(set-face-background 'default "undefined")
+(use-package tokyonight-themes
+  :vc (:url "https://github.com/xuchengpeng/tokyonight-themes")
+  :config
+  (load-theme 'tokyonight-moon :no-confirm))

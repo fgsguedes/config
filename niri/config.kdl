@@ -193,6 +193,4 @@ window-rule {
     open-floating true
 }
 
-include "dms/binds.kdl"
-
-
+include "binds.kdl"

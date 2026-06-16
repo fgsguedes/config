@@ -33,7 +33,6 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export SAVEHIST=1000
 export HISTSIZE=1000
 
-setopt AUTO_CD
 setopt PROMPT_SUBST
 setopt AUTO_MENU AUTO_PARAM_SLASH
 setopt HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
@@ -41,3 +40,5 @@ setopt HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
 export WORDCHARS=''
 
 export PROMPT=$'%F{blue}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
+eval "$(zoxide init --cmd cd zsh)"
+

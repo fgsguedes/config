@@ -1,32 +1,9 @@
 // https://niri-wm.github.io/niri/Configuration:-Introduction
 // https://niri-wm.github.io/niri/Configuration:-Input
 input {
-    keyboard {
-        xkb {
-            // You can set rules, model, layout, variant and options.
-            // For more information, see xkeyboard-config(7).
-
-            // For example:
-            // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-
-            // If this section is empty, niri will fetch xkb settings
-            // from org.freedesktop.locale1. You can control these using
-            // localectl set-x11-keymap.
-        }
-    }
-
     trackball {
         natural-scroll
         accel-speed 1
-    }
-
-    trackpoint {
-        off
-    }
-
-    touchpad {
-        off
     }
 
     // Wont focus a window if it will result in the scrolling more than the set amount
@@ -42,11 +19,21 @@ output "DP-1" {
     hot-corners {
 	off
     }
+
+    layout {
+        preset-column-widths {
+            proportion 0.5
+            proportion 0.85
+	}
+
+        default-column-width {
+	    proportion 0.85
+	}
+    }
 }
 
 output "DP-2" {
-    mode "2560x1440"
-    variable-refresh-rate
+    mode "2560x1440@143.973"
     focus-at-startup
     position x=0 y=0
 
@@ -61,21 +48,15 @@ layout {
 
     center-focused-column "never"
     always-center-single-column
+    background-color "transparent"
 
     preset-column-widths {
-        proportion 0.33333
         proportion 0.5
-	proportion 0.66667
         proportion 0.75
     }
 
-    preset-window-heights {
-        proportion 0.5
-	proportion 1.0
-    }
-
     default-column-width {
-        proportion 0.66667
+        proportion 0.75
     }
 
     focus-ring {
@@ -96,8 +77,10 @@ layout {
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
 
-environment {
-  XDG_CURRENT_DESKTOP "niri"
+overview {
+    workspace-shadow {
+        off
+    }
 }
 
 hotkey-overlay {
@@ -122,8 +105,30 @@ window-rule {
     open-focused false
 }
 
-debug {
-    honor-xdg-activation-with-invalid-serial
+window-rule {
+    match app-id="org.gnome.NautilusPreviewer"
+    match app-id="app.zen_browser.zen" title="Picture-in-Picture"
+    
+    open-floating true
+}
+
+window-rule {
+    match app-id="steam_app_default" title="World of Warcraft"
+
+    open-fullscreen true
+    open-focused true
+}
+
+layer-rule {
+    match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+
+recent-windows {
+    open-delay-ms 0
+    highlight {
+        corner-radius 8
+    }
 }
 
 include "binds.kdl"

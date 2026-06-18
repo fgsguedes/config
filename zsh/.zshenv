@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # default programs
-export EDITOR="emacs"
+export EDITOR="nvim"
 
 # XDG base directories
 export XDG_CACHE_HOME="$HOME/.cache"

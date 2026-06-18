@@ -40,5 +40,7 @@ setopt HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
 export WORDCHARS=''
 
 export PROMPT=$'%F{blue}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
+
+source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 

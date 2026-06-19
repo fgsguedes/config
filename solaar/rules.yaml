@@ -1,0 +1,19 @@
+%YAML 1.3
+---
+- Key: [DPI Change, pressed]
+- KeyPress:
+  - F8
+  - click
+...
+---
+- Key: [Left Tilt, pressed]
+- KeyPress:
+  - F12
+  - click
+...
+---
+- Key: [Right Tilt, pressed]
+- KeyPress:
+  - F7
+  - click
+...

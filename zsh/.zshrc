@@ -43,6 +43,6 @@ export WORDCHARS=''
 
 export PROMPT=$'%F{blue}%~%f${vcs_info_msg_0_}\n%F{%(?.green.red)}%(!.#.$)%f '
 
-source <(fzf --zsh)
+source "$XDG_CONFIG_HOME/zsh/fzf.sh"
 eval "$(zoxide init --cmd cd zsh)"
 

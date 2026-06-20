@@ -7,4 +7,3 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 require("config.lazy")
-

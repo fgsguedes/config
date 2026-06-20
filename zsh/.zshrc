@@ -7,6 +7,8 @@ autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 autoload -Uz vcs_info
 
+bindkey -e
+
 [ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION

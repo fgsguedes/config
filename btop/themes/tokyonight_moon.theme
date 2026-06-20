@@ -1,5 +1,6 @@
 # Theme: tokyonight_moon
 # By: Folke Lemaitre
+# https://github.com/folke/tokyonight.nvim/blob/main/extras/btop/tokyonight_moon.theme
 
 theme[main_bg]="#222436"
 theme[main_fg]="#c8d3f5"
@@ -71,3 +72,4 @@ theme[download_end]="#ff757f"
 theme[upload_start]="#c3e88d"
 theme[upload_mid]="#ffc777"
 theme[upload_end]="#ff757f"
+

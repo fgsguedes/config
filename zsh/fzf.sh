@@ -1,5 +1,8 @@
 source <(fzf --zsh)
 
+# Theme: tokyonight_moon
+# By: Folke Lemaitre
+# https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_moon.sh
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \
   --info=inline-right \

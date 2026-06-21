@@ -5,7 +5,7 @@ cursor-color = #FFFFFF
 cursor-style = underline
 font-family = "JetBrains Mono Regular"
 font-size = 13
-theme = TokyoNight Moon
+theme = Catppuccin Macchiato
 
 # Shell
 shell-integration-features = no-cursor

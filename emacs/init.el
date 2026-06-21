@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa" . "https://stable.melpa.org/packages/") t)
+	     '("melpa" . "https://melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -40,11 +40,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ido-enable-flex-matching t)
- '(package-selected-packages nil)
- '(package-vc-selected-packages
-   '((tokyonight-themes :url
-			"https://github.com/xuchengpeng/tokyonight-themes"))))
-
+ '(package-selected-packages '(catppuccin-theme smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -52,7 +48,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(use-package tokyonight-themes
-  :vc (:url "https://github.com/xuchengpeng/tokyonight-themes")
-  :config
-  (load-theme 'tokyonight-moon :no-confirm))
+(load-theme 'catppuccin :no-confirm)
+(setq catppuccin-flavor 'macchiato)
+(catppuccin-reload)

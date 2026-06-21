@@ -1,20 +1,21 @@
 [alias]
-	l = log --date-order --graph --full-history --pretty=format:'%C(red)%h %C(cyan)%ch %C(bold blue)%aN%C(bold yellow)%d %C(reset)%s'
-	f = fetch --all
-	st = status
+l = log --date-order --graph --full-history --pretty=format:'%C(red)%h %C(cyan)%ch %C(bold blue)%aN%C(bold yellow)%d %C(reset)%s'
+f = fetch --all
+st = status
+d = difftool --no-symlinks --dir-diff
 
 [core]
-	editor = nvim
-	autocrlf = input
+editor = nvim
+autocrlf = input
 
 [fetch]
-	prune = true
+prune = true
 
 [pull]
-	ff = only
+ff = only
 
 [push]
-	default = current
+default = current
 
 [merge]
-	conflictStyle = diff3
+conflictStyle = diff3

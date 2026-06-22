@@ -17,18 +17,18 @@ output "DP-1" {
     position x=0 y=-1440
 
     hot-corners {
-	off
+        off
     }
 
     layout {
         preset-column-widths {
             proportion 0.5
             proportion 0.85
-	}
+        }
 
         default-column-width {
-	    proportion 0.85
-	}
+            proportion 0.85
+        }
     }
 }
 
@@ -38,7 +38,7 @@ output "DP-2" {
     position x=0 y=0
 
     hot-corners {
-	off
+        off
     }
 }
 
@@ -71,7 +71,7 @@ layout {
     }
 
     shadow {
-    	off
+        off
     }
 }
 
@@ -108,7 +108,7 @@ window-rule {
 window-rule {
     match app-id="org.gnome.NautilusPreviewer"
     match app-id="app.zen_browser.zen" title="Picture-in-Picture"
-    
+
     open-floating true
 }
 

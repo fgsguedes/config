@@ -6,6 +6,10 @@ input {
         accel-speed 1
     }
 
+    touchpad {
+        natural-scroll
+    }
+
     // Wont focus a window if it will result in the scrolling more than the set amount
     focus-follows-mouse max-scroll-amount="90%"
 }
@@ -22,12 +26,11 @@ output "DP-1" {
 
     layout {
         preset-column-widths {
-            proportion 0.5
-            proportion 0.85
+            proportion 1.0
         }
 
         default-column-width {
-            proportion 0.85
+            proportion 1.0
         }
     }
 }
@@ -62,8 +65,14 @@ layout {
     focus-ring {
         on
         width 2
-        active-color "#4e70c2"
-        urgent-color "#e55561"
+        active-color "#8aadf4"
+        urgent-color "#ee99a0"
+    }
+
+    tab-indicator {
+        place-within-column
+        position "right"
+        gap -12
     }
 
     border {
@@ -76,6 +85,11 @@ layout {
 }
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
+
+cursor {
+    xcursor-theme "catppuccin-macchiato-dark-cursors"
+    xcursor-size 32
+}
 
 overview {
     workspace-shadow {

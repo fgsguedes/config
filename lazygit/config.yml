@@ -31,3 +31,24 @@ gui:
 
   authorColors:
     '*': '#b7bdf8'
+
+keybinding:
+  universal:
+    nextItem-alt: 'n'
+    prevItem-alt: 'e'
+    nextBlock-alt: 'i'
+    nextMatch: 'n'
+    prevMatch: 'e'
+    edit: 'E'
+
+  files:
+    ignoreFile: 'I'
+
+  branches:
+    viewGitFlowOptions: 'I'
+
+  commits:
+    startInteractiveRebase: 'I'
+
+  submodules:
+    init: 'I'

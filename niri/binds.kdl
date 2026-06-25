@@ -23,28 +23,28 @@ binds {
     Mod+Shift+F { fullscreen-window; }
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    // Focus 
+    // Focus
     Mod+H { focus-column-left; }
     Mod+A { focus-column-left; }
     Mod+I { focus-column-right; }
     Mod+S { focus-column-right; }
     Mod+E { focus-window-up; }
     Mod+N { focus-window-down; }
-   
-    // Focus workspace 
+
+    // Focus workspace
     Super+U { focus-workspace-up; }
     Super+L { focus-workspace-down; }
 
     // Focus monitor
-    Mod+Ctrl+N { focus-monitor-down; }
     Mod+Ctrl+E { focus-monitor-up; }
+    Mod+Ctrl+N { focus-monitor-down; }
 
-    // Move 
+    // Move
     Mod+Shift+H { move-column-left; }
     Mod+Shift+I { move-column-right; }
     Mod+Shift+E { move-window-up; }
     Mod+Shift+N { move-window-down; }
-   
+
     // Move workspace
     Super+Shift+U { move-column-to-workspace-up; }
     Super+Shift+L { move-column-to-workspace-down; }
@@ -63,7 +63,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    
+
     // Mouse bindings
     Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
     Mod+Shift+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
@@ -73,7 +73,7 @@ binds {
     // Floating
     Mod+Shift+T { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-    
+
     // Media
     XF86AudioPlay allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
     XF86AudioPrev allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }

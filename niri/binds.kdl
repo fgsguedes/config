@@ -46,9 +46,9 @@ binds {
     Mod+Shift+N { move-window-down; }
    
     // Move workspace
-    Super+Shift+L { move-column-to-workspace-up; }
-    Super+Shift+U { move-column-to-workspace-down; }
-  
+    Super+Shift+U { move-column-to-workspace-up; }
+    Super+Shift+L { move-column-to-workspace-down; }
+
     // Move monitor
     Mod+Ctrl+Shift+E { move-column-to-monitor-up; }
     Mod+Ctrl+Shift+N { move-column-to-monitor-down; }

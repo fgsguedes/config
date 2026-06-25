@@ -1,0 +1,6 @@
+vim.api.nvim_create_user_command("CleanFormat", function()
+    local cursor_position = vim.fn.getpos(".")
+    vim.cmd([[%s/\s\+$//e]])
+    vim.cmd("normal! gg=G")
+    vim.fn.setpos(".", cursor_position)
+end, {})

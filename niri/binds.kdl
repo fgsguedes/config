@@ -8,6 +8,7 @@ binds {
     Mod+Tab repeat=false { toggle-overview; }
     Mod+O repeat=false { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+P repeat=false { spawn "wlogout" "-m" "500"; }
     Mod+Ctrl+Alt+Shift+E { quit; }
 
     // Tabbing & stacking
@@ -90,5 +91,4 @@ binds {
     // Noctalia
     Mod+Comma hotkey-overlay-title="Settings" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
     // Mod+Ctrl+N hotkey-overlay-title="Notification Center" { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
-    Mod+P { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 }

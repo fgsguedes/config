@@ -32,6 +32,12 @@ gui:
   authorColors:
     '*': '#b7bdf8'
 
+
+git:
+  autoFetch: false
+  disableForcePushing: true
+
+
 keybinding:
   universal:
     nextItem-alt: 'n'

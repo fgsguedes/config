@@ -26,6 +26,7 @@ output "DP-1" {
 
     layout {
         preset-column-widths {
+            proportion 0.5
             proportion 1.0
         }
 

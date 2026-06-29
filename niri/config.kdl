@@ -90,6 +90,9 @@ spawn-at-startup "qs" "-c" "noctalia-shell"
 cursor {
     xcursor-theme "catppuccin-macchiato-dark-cursors"
     xcursor-size 32
+
+    hide-when-typing
+    hide-after-inactive-ms 5000
 }
 
 overview {

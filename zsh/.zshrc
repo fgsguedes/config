@@ -1,7 +1,5 @@
-alias gitc='git fetch --prune && git branch -vv | grep '\'': gone]'\'' | awk '\''{print $1}'\'' | xargs -r git branch -D ** git reflog expire --expire=now --all ** git gc --prune-now'
 alias gw='./gradlew'
 alias ls='ls -lah --color=auto'
-alias top=btop
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors

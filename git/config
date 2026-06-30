@@ -1,8 +1,7 @@
 [alias]
 l = log --date-order --graph --full-history --pretty=format:'%C(red)%h %C(cyan)%ch %C(bold blue)%aN%C(bold yellow)%d %C(reset)%s'
-f = fetch --all
+f = fetch
 st = status
-d = difftool --no-symlinks --dir-diff
 
 [core]
 editor = nvim

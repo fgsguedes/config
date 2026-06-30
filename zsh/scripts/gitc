@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+  echo "Error: not a git repository."
+  exit 1
+fi
+
 git fetch --prune
 
 gone_branches=$(git branch -vv | awk '/: gone]/{print $1}')

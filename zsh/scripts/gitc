@@ -2,8 +2,8 @@
 set -euo pipefail
 
 if ! git rev-parse --git-dir > /dev/null 2>&1; then
-  echo "Error: not a git repository."
-  exit 1
+    echo "Error: not a git repository."
+    exit 1
 fi
 
 git fetch --prune
@@ -11,23 +11,23 @@ git fetch --prune
 gone_branches=$(git branch -vv | awk '/: gone]/{print $1}')
 
 if [ -z "$gone_branches" ]; then
-  echo "Nothing to clean up."
-  exit 0
+    echo "Nothing to clean up."
+    exit 0
 fi
 
 worktree_info=$(git worktree list --porcelain)
 
 for branch in $gone_branches; do
-  worktree_path=$(echo "$worktree_info" | awk -v b="refs/heads/$branch" '
+    worktree_path=$(echo "$worktree_info" | awk -v b="refs/heads/$branch" '
     /^worktree / { path = $2 }
     /^branch /   { if ($2 == b) print path }
-  ')
+    ')
 
-  if [ -n "$worktree_path" ]; then
-    echo "Removing worktree for '$branch': $worktree_path"
-    git worktree remove "$worktree_path"
-  fi
+    if [ -n "$worktree_path" ]; then
+        echo "Removing worktree for '$branch': $worktree_path"
+        git worktree remove "$worktree_path"
+    fi
 
-  echo "Deleting branch: $branch"
-  git branch -D "$branch"
+    echo "Deleting branch: $branch"
+    git branch -D "$branch"
 done

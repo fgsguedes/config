@@ -137,6 +137,13 @@ window-rule {
     open-focused true
 }
 
+window-rule {
+    match app-id="lxqt-policykit-agent"
+
+    open-focused true
+    open-floating true
+}
+
 layer-rule {
     match namespace="^noctalia-wallpaper*"
     place-within-backdrop true

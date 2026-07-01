@@ -29,6 +29,5 @@ for branch in $gone_branches; do
         git worktree remove "$worktree_path"
     fi
 
-    echo "Deleting branch: $branch"
     git branch -D "$branch"
 done

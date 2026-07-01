@@ -8,7 +8,8 @@ fi
 
 git fetch --prune
 
-gone_branches=$(git branch -vv | awk '/: gone]/{print $1}')
+gone_branches=$(git branch --format '%(refname:short) %(upstream:track)' \
+    | awk '/\[gone\]/{print $1}')
 
 if [ -z "$gone_branches" ]; then
     echo "Nothing to clean up."

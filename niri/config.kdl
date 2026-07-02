@@ -126,6 +126,7 @@ window-rule {
 window-rule {
     match app-id="org.gnome.NautilusPreviewer"
     match app-id="app.zen_browser.zen" title="Picture-in-Picture"
+    match app-id="org.pulseaudio.pavucontrol"
 
     open-floating true
 }

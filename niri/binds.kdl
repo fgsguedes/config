@@ -75,6 +75,7 @@ binds {
     Mod+Ctrl+Shift+S { screenshot-window; }
 
     // Noctalia
-    Mod+Comma hotkey-overlay-title="Settings" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    // Mod+Ctrl+N hotkey-overlay-title="Notification Center" { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
+    Mod+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+    Mod+P repeat=false { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Alt+N hotkey-overlay-title="Notification Center" { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
 }

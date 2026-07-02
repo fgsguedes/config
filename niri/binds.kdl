@@ -5,11 +5,7 @@ binds {
     // Niri core
     Mod+Q repeat=false { close-window; }
     Mod+C { center-column; }
-    Mod+Tab repeat=false { toggle-overview; }
     Mod+O repeat=false { toggle-overview; }
-    Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+P repeat=false { spawn "wlogout" "-m" "500"; }
-    Mod+Ctrl+Alt+Shift+E { quit; }
 
     // Tabbing & stacking
     Mod+W { toggle-column-tabbed-display; }
@@ -60,16 +56,6 @@ binds {
     Mod+3 { focus-workspace 3; }
     Mod+4 { focus-workspace 4; }
     Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
-
-    // Mouse bindings
-    Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
-    Mod+Shift+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
-    Mod+WheelScrollUp cooldown-ms=50 { focus-column-left; }
-    Mod+WheelScrollDown cooldown-ms=50 { focus-column-right; }
 
     // Floating
     Mod+Shift+T { toggle-window-floating; }
